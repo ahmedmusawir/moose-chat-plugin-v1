@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import ReactAppThemeOne from './react/ReactAppThemeOne';
 import ReactWpApp1 from './react/ReactWpApp1';
+import MooseChat from './react/MooseChat';
 
 import VanillaJavascriptTest from './VanillaJavascriptTest';
 
@@ -14,9 +15,13 @@ class App {
     // LUNCHING MOOSE CHAT V1
     const mooseChatV1 = document.getElementById('MOOSE-CHAT-V1');
     if (mooseChatV1) {
-      // ReactDOM.render(<ReactWpApp1 />, mooseChatV1);
-      ReactDOM.render(<ReactAppThemeOne />, mooseChatV1);
+      ReactDOM.render(<MooseChat />, mooseChatV1);
     }
+    //  const mooseChatV1 = document.getElementById('MOOSE-CHAT-V1');
+    //  if (mooseChatV1) {
+    //    // ReactDOM.render(<ReactWpApp1 />, mooseChatV1);
+    //    ReactDOM.render(<ReactAppThemeOne />, mooseChatV1);
+    //  }
     // LUNCHING REACT APP THEME ONE
     // const appThemeOne = document.getElementById('REACT-PLUGIN-APP');
     // if (appThemeOne) {
