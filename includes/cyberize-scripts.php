@@ -45,6 +45,18 @@ add_action('wp_enqueue_scripts',
    time()
   );
 
+  $current_user       = wp_get_current_user();
+  $current_user_name  = $current_user->user_firstname . $current_user->user_lastname;
+  $current_user_email = $current_user->user_email;
+
+  wp_localize_script(MOOSE_CHAT_V1_FRONTEND_SCRIPT_ID, 'mooseData', array(
+   'root_url'           => get_site_url(),
+   'ajax_url'           => admin_url('admin-ajax.php'),
+   'nonce'              => wp_create_nonce('wp_rest'),
+   'currentWPUserName'  => $current_user_name,
+   'currentWPUserEmail' => $current_user_email
+  ));
+
   /* THIS SCRIPT ONLY LOADS ON WP FRONTEND FOR SINGLE BLOG POST OR CPT SINGLE ONLY */
   if (!is_single()) {
    wp_enqueue_script(MOOSE_CHAT_V1_FRONTEND_SCRIPT_ID);

@@ -2,13 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { ChatEngine, getOrCreateChat, PeopleSettings } from 'react-chat-engine';
 import ReactAppThemeOne from './ReactAppThemeOne';
 import axios from 'axios';
-import ChatUserSearch from './components/chat/ChatUserSearch';
 
 const MooseChat = (props) => {
-  const params = new URLSearchParams(window.location.search);
-  console.log('URL UserName: ', params.get('username'));
-  console.log('URL User Secret: ', params.get('secret'));
-
   //COLLECTING CURRENT USER FROM GLOBAL
   const currentUser = mooseData.currentWPUserName;
   const currentUserEmail = mooseData.currentWPUserEmail;
@@ -86,11 +81,8 @@ const MooseChat = (props) => {
   function renderChatForm(creds) {
     return (
       <div>
-        <p>{params.get('username')}</p>
-        <p>{params.get('secret')}</p>
         <input
           placeholder="Username"
-          id="dm-search-input"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
@@ -102,6 +94,7 @@ const MooseChat = (props) => {
   return (
     <ChatEngine
       height="60vh"
+      width="100vw"
       projectID="98d9a7a2-3755-4354-a63f-a9165641e131"
       userName={currentUser}
       userSecret={currentUserEmail}
@@ -110,7 +103,7 @@ const MooseChat = (props) => {
       // userName="odesk.shourav@gmail.com"
       // userSecret="odesk.shourav@gmail.com"
       // renderNewChatForm={(creds) => createDirectChat(creds)} // This is for starting DM on page load
-      renderChatSettings={(chatAppState) => <ChatUserSearch />}
+      // renderChatSettings={(chatAppState) => {}}
     />
   );
 };

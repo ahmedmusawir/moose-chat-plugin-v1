@@ -4,8 +4,8 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 import ReactAppThemeOne from './react/ReactAppThemeOne';
-import ReactWpApp1 from './react/ReactWpApp1';
 import MooseChat from './react/MooseChat';
+// import ReactWpApp1 from './react/ReactWpApp1';
 
 import VanillaJavascriptTest from './VanillaJavascriptTest';
 

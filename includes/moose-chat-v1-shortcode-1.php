@@ -16,18 +16,23 @@
 
  function show_moose_chat($atts)
  {
-  // $current_user = wp_get_current_user();
+
+  $current_user = wp_get_current_user();
+
   // echo '<pre>';
   // print_r($current_user);
   // echo '</pre>';
+  // JUST AN EFFORT TO COLLECT THE CURRENT USER INFO
+  $current_user_display_name = $current_user->display_name;
+  $current_user_email        = $current_user->user_email;
 
   $atts = shortcode_atts(
 
    array(
 
-    // ANY VARIABLE TO BE USED IN THE SHORTCODE AS AN ATTRIBUTE & CAN BE SHOWN ON THE PAGE
-    'any_var_1' => 'text or variable as value',
-    'any_var_2' => 'text or variable as value'
+    // JUST AN EFFORT TO COLLECT THE CURRENT USER INFO
+    'loggedin_display_name' => $current_user_display_name,
+    'loggedin_email'        => $current_user_email
 
    ),
 
