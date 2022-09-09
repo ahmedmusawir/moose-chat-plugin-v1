@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { ChatEngine, getOrCreateChat, PeopleSettings } from 'react-chat-engine';
-import ReactAppThemeOne from './ReactAppThemeOne';
 import axios from 'axios';
 import ChatUserSearch from './components/chat/ChatUserSearch';
 
@@ -21,6 +20,7 @@ const MooseChat = (props) => {
     secret: currentUserEmail,
   };
 
+  alert('I always run with... ' + mooseData.currentWPUserName);
   console.log('Logged in as: ', loggedInWPUser);
 
   useEffect(() => {
@@ -102,11 +102,12 @@ const MooseChat = (props) => {
   return (
     <ChatEngine
       height="60vh"
-      projectID="98d9a7a2-3755-4354-a63f-a9165641e131"
+      projectID="4ca132ec-0f15-4b96-9cb4-a62d31066802"
       userName={currentUser}
-      userSecret={currentUserEmail}
+      userSecret="pass1234"
+      // userName={currentUser}
+      // userSecret={currentUserEmail}
       renderNewChatForm={(creds) => renderChatForm(creds)} // This is for DM from the Chat page
-      renderPeopleSettings={(creds, chat) => <PeopleSettings />}
       // userName="odesk.shourav@gmail.com"
       // userSecret="odesk.shourav@gmail.com"
       // renderNewChatForm={(creds) => createDirectChat(creds)} // This is for starting DM on page load
