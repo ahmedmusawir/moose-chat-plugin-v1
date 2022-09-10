@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChatEngine, getOrCreateChat, PeopleSettings } from 'react-chat-engine';
+import { ChatEngine, getOrCreateChat } from 'react-chat-engine';
 import axios from 'axios';
 import ChatUserSearch from './components/chat/ChatUserSearch';
 
@@ -10,7 +10,7 @@ const MooseChat = (props) => {
 
   //COLLECTING CURRENT USER FROM GLOBAL
   const currentUser = mooseData.currentWPUserName;
-  const currentUserEmail = mooseData.currentWPUserEmail;
+  // const currentUserEmail = mooseData.currentWPUserEmail;
   const [username, setUsername] = useState('');
   const [secret, setSecret] = useState('');
   const [loading, setLoading] = useState(true);
@@ -60,22 +60,6 @@ const MooseChat = (props) => {
         () => setUsername('')
       );
     }
-  }
-
-  function renderChatForm(creds) {
-    return (
-      <div>
-        <p>{params.get('username')}</p>
-        {/* <p>{params.get('secret')}</p> */}
-        <input
-          placeholder="Username"
-          id="dm-search-input"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <button onClick={() => createDirectChat(creds)}>Create</button>
-      </div>
-    );
   }
 
   return (
